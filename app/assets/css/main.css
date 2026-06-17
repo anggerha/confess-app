@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --pink1: #ff8ac6;
+  --pink2: #ffb6d9;
+  --pink3: #ffe3f1;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: "Nunito", sans-serif;
+}
+
+.retro-font {
+  font-family: "Press Start 2P", cursive;
+}
+
+.crt {
+  position: relative;
+}
+
+.crt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.05),
+      rgba(255,255,255,.05) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+
+  pointer-events: none;
+}
+
+.glow {
+  text-shadow:
+    0 0 10px #ff9bd4,
+    0 0 20px #ff9bd4,
+    0 0 40px #ff9bd4;
+}
+
+.floating-heart {
+  color: #ff4fa3;
+  font-size: 24px;
+  line-height: 1;
+  opacity: 0.75;
+  pointer-events: none;
+  text-shadow: 0 0 14px rgba(255, 79, 163, 0.55);
+  animation-name: float-love;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 640px) {
+  .floating-heart {
+    font-size: 18px;
+    opacity: 0.55;
+  }
+}
+
+@keyframes float-love {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0) rotate(-12deg) scale(0.75);
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: translate3d(var(--float-x), var(--float-mid-y), 0) rotate(10deg) scale(1.15);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(var(--float-x) * -1), var(--float-y), 0) rotate(24deg) scale(0.85);
+  }
+}
