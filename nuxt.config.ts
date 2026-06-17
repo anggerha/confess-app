@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'A Message For You 💌',
+      title: 'Hi Alicia! I Have a Message For You 💌',
 
       link: [
         {
