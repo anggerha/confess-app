@@ -95,6 +95,12 @@ onMounted(() => {
           NEW MESSAGE
         </h1>
 
+        <h1
+          class="retro-font break-words text-base leading-relaxed text-pink-500 sm:text-xl"
+        >
+          Hi Alice!
+        </h1>
+
         <p class="mt-6 text-sm text-gray-600 sm:mt-8 sm:text-base">
           You have received
           <span class="font-bold">
